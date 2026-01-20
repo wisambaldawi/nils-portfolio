@@ -1,0 +1,343 @@
+/* --- GRUNDINSTÄLLNINGAR & FÄRGER --- */
+:root {
+    --bg-color: #f3eee6;       /* Ljus beige (väggen) */
+    --card-bg: #ffffff;        /* Vit för kontrast */
+    --text-main: #2b2b2b;      /* Mörkgrå/Svart (skjortan) */
+    --accent: #a67c52;         /* Brun/Guld ton (tegel/hudton) */
+    --font-heading: 'Merriweather', serif; /* Klassisk stil för rubriker */
+    --font-body: 'Montserrat', sans-serif; /* Modern stil för brödtext */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10% 10%;
+    min-height: 90vh; 
+    flex-wrap: wrap; 
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+}
+
+.hero-text h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px; 
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.05); 
+}
+
+/* --- KNAPPAR --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--text-main);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: transform 0.2s;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    transform: translateY(-3px); 
+    background-color: var(--accent);
+}
+
+/* --- ALLMÄNNA SEKTIONER --- */
+.container {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-light {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* --- OM MIG --- */
+#about {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-content {
+    flex: 2;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    filter: sepia(20%); 
+}
+
+/* --- ARTIKEL-GRID (2x2 Layout) --- */
+.article-grid {
+    display: grid;
+    /* Mobil: 1 kolumn */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+/* Desktop: 2 kolumner (Perfekt för 4 artiklar) */
+@media (min-width: 700px) {
+    .article-grid {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+.article-card {
+    background: #fff; 
+    padding: 25px; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    color: var(--text-main);
+    border: 1px solid rgba(0,0,0,0.05); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    border-color: var(--accent); 
+}
+
+.article-card .tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 800;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.article-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.article-card p {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* --- ERFARENHET --- */
+.timeline {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: var(--card-bg); 
+    padding: 30px; 
+    flex: 1; 
+    min-width: 280px;
+    border-left: 4px solid var(--accent); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.card h4 {
+    font-size: 0.9rem; 
+    color: #666; 
+    margin-bottom: 15px; 
+    font-weight: 600;
+}
+
+/* --- KOMPETENS --- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-tag {
+    background-color: #fff; 
+    border: 1px solid var(--text-main); 
+    padding: 10px 20px;
+    border-radius: 50px; 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background-color: var(--text-main); 
+    color: #fff;
+}
+
+/* --- FOTOGRAFI-GALLERI --- */
+/* --- FOTOGRAFI-GALLERI (LÄGG LÄNGST NER I STYLE.CSS) --- */
+
+.photo-grid {
+    display: grid;
+    /* PÅ MOBIL: 2 bilder i bredd */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Mellanrum mellan bilderna */
+}
+
+/* PÅ DATOR: 4 bilder i bredd (Perfekt för 8 bilder) */
+@media (min-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* VIKTIGT: Detta gör bilderna snygga */
+.photo-grid img {
+    width: 100%;       /* Tvingar bilden att fylla sin ruta */
+    height: 300px;     /* Alla bilder blir exakt lika höga */
+    object-fit: cover; /* Beskär bilden snyggt så den inte ser utdragen ut */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* En snygg effekt när man håller musen över */
+.photo-grid img:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* På datorer kör vi 3 bilder i bredd */
+@media (min-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.photo-grid img {
+    width: 100%;
+    /* Detta tvingar alla bilder att bli 250px höga */
+    height: 250px; 
+    /* Beskär bilden snyggt */
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.photo-grid img:hover {
+    transform: scale(1.03); 
+    filter: brightness(1.05); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--text-main);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+footer h2, footer p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.btn-dark {
+    background-color: #fff;
+    color: var(--text-main);
+}
+
+.btn-dark:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* --- RESPONSIVITET (Mobil) --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+        text-align: center;
+        flex-direction: column-reverse; 
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    #about {
+        flex-direction: column;
+    }
+}
